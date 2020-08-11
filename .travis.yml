@@ -86,7 +86,7 @@ jobs:
         - tools/travis/install_spaceman_dmm.sh dmdoc
       before_script:
         # Travis checks out a hash, try to get back on a branch.
-        - git checkout $TRAVIS_BRANCH || true
+        - git checkout gh-pages || true
       script:
         - ~/dmdoc
         - touch dmdoc/.nojekyll
@@ -94,5 +94,5 @@ jobs:
         provider: pages
         skip_cleanup: true
         local_dir: dmdoc
-        token: $DMDOC_GITHUB_TOKEN
+        token: $GITHUB_TOKEN
         fqdn: codedocs.tgstation13.org
